@@ -1,0 +1,30 @@
+:root {
+    --color-principal: #007BE6;
+    /* */
+    --color-morado-1: #430066;
+    /* */
+    --color-morado-2: #760065;
+    /* */
+    --color-azul-oscuro: #030066;
+    /* */
+}
+
+/* Aplicamos el color del boceto al Navbar */
+.navbar-custom {
+    /* Usando uno de los morados de tu paleta */
+    background-color: var(--color-morado-1);
+}
+
+/* Hacemos que el footer use otro color de tu paleta */
+.footer-custom {
+    /* Usando el azul oscuro de tu paleta */
+    background-color: var(--color-azul-oscuro);
+}
+
+.carousel-item img {
+            max-height: 60vh;
+            object-fit: cover;
+        }
+.imagen {
+    height: 500px;
+}
