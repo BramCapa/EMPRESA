@@ -1,30 +1,146 @@
-:root {
-    --color-principal: #007BE6;
-    /* */
-    --color-morado-1: #430066;
-    /* */
-    --color-morado-2: #760065;
-    /* */
-    --color-azul-oscuro: #030066;
-    /* */
+/* * ESTILOS PERSONALIZADOS (Mínimos)
+ * Solo contiene efectos y estilos que Bootstrap no puede hacer con utilidades.
+*/
+
+/* --- Fuentes --- */
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Aplicamos el color del boceto al Navbar */
-.navbar-custom {
-    /* Usando uno de los morados de tu paleta */
-    background-color: var(--color-morado-1);
+/* --- Clases de utilidad personalizadas --- */
+.py-7 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
 }
 
-/* Hacemos que el footer use otro color de tu paleta */
-.footer-custom {
-    /* Usando el azul oscuro de tu paleta */
-    background-color: var(--color-azul-oscuro);
+.letter-spacing-1 {
+    letter-spacing: 1.5px;
 }
 
-.carousel-item img {
-            max-height: 60vh;
-            object-fit: cover;
-        }
-.imagen {
-    height: 500px;
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.backdrop-blur-sm {
+    backdrop-filter: blur(5px);
+}
+
+/* --- Navegación: Subrayado activo/hover --- */
+.navbar .nav-link {
+    padding: 0.5rem 0;
+    margin-left: 1.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Ligeramente separado */
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--bs-warning); /* Usa la variable de color de Bootstrap */
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 100%;
+}
+
+/* --- Efecto de 'lift' para botones y tarjetas --- */
+.btn-hover,
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-hover:hover,
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Efecto de Zoom y Borde en Hero (aplicado al contenedor del carrusel) --- */
+/*
+  Nota: Los efectos visuales de hover en la imagen individual dentro del carrusel
+  pueden ser menos notorios o deseables cuando hay múltiples imágenes rotando.
+  Aquí se aplican al contenedor principal del carrusel.
+*/
+.hero-image-hover {
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-image-hover img {
+    transition: filter 0.4s ease;
+    filter: brightness(0.9);
+}
+
+.hero-image-hover:hover {
+    transform: scale(1.03);
+    border-color: var(--bs-warning) !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+.hero-image-hover:hover img {
+    /* Este hover sobre la imagen individual dentro del carrusel puede ser sutil */
+    filter: brightness(1);
+}
+
+/* --- Efecto de Overlay en Galería --- */
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+.gallery-item img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.85);
+}
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1 !important;
+}
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.5);
+}
+
+
+/* --- Lista con Íconos 'check' --- */
+.list-checked li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0.7rem;
+    color: var(--bs-body-secondary); /* Usa color de texto secundario de Bootstrap */
+}
+
+.list-checked li::before {
+    content: '\F26A'; /* Icono check de Bootstrap */
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--bs-warning); /* Usa color de acento de Bootstrap */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- Iconos Sociales en Footer --- */
+.social-icons a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-icons a:hover {
+    color: var(--bs-warning) !important;
+    transform: translateY(-3px);
 }
