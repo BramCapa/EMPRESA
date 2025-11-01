@@ -1,13 +1,9 @@
-/* * ESTILOS PERSONALIZADOS (Mínimos)
- * Solo contiene efectos y estilos que Bootstrap no puede hacer con utilidades.
-*/
 
-/* --- Fuentes --- */
 body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* --- Clases de utilidad personalizadas --- */
+
 .py-7 {
     padding-top: 7rem;
     padding-bottom: 7rem;
@@ -25,7 +21,7 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* --- Navegación: Subrayado activo/hover --- */
+
 .navbar .nav-link {
     padding: 0.5rem 0;
     margin-left: 1.5rem;
@@ -36,11 +32,11 @@ body {
 .navbar .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Ligeramente separado */
+    bottom: -5px; 
     left: 0;
     width: 0;
     height: 3px;
-    background-color: var(--bs-warning); /* Usa la variable de color de Bootstrap */
+    background-color: var(--bs-warning); 
     transition: width 0.3s ease;
 }
 
@@ -49,7 +45,7 @@ body {
     width: 100%;
 }
 
-/* --- Efecto de 'lift' para botones y tarjetas --- */
+
 .btn-hover,
 .card-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -61,12 +57,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* --- Efecto de Zoom y Borde en Hero (aplicado al contenedor del carrusel) --- */
-/*
-  Nota: Los efectos visuales de hover en la imagen individual dentro del carrusel
-  pueden ser menos notorios o deseables cuando hay múltiples imágenes rotando.
-  Aquí se aplican al contenedor principal del carrusel.
-*/
+
 .hero-image-hover {
     transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
@@ -81,11 +72,11 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 .hero-image-hover:hover img {
-    /* Este hover sobre la imagen individual dentro del carrusel puede ser sutil */
+
     filter: brightness(1);
 }
 
-/* --- Efecto de Overlay en Galería --- */
+
 .gallery-item {
     position: relative;
     cursor: pointer;
@@ -117,12 +108,12 @@ body {
 }
 
 
-/* --- Lista con Íconos 'check' --- */
+
 .list-checked li {
     position: relative;
     padding-left: 30px;
     margin-bottom: 0.7rem;
-    color: var(--bs-body-secondary); /* Usa color de texto secundario de Bootstrap */
+    color: var(--bs-body-secondary);
 }
 
 .list-checked li::before {
@@ -136,11 +127,21 @@ body {
     font-size: 1.1rem;
 }
 
-/* --- Iconos Sociales en Footer --- */
+
 .social-icons a {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 .social-icons a:hover {
     color: var(--bs-warning) !important;
     transform: translateY(-3px);
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+.gallery-item img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.85);
+    height: 320px; 
 }
