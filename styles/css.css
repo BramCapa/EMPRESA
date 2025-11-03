@@ -1,3 +1,8 @@
+:root {
+    --color-acento: #ffc107;
+    --color-texto-secundario: #adb5bd;
+}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -36,7 +41,8 @@ body {
     left: 0;
     width: 0;
     height: 3px;
-    background-color: var(--bs-warning); 
+    /* 2. Usando tu variable personalizada */
+    background-color: var(--color-acento); 
     transition: width 0.3s ease;
 }
 
@@ -45,9 +51,6 @@ body {
     width: 100%;
 }
 
-.text-shadow {
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-}
 
 .btn-hover,
 .card-hover {
@@ -71,7 +74,8 @@ body {
 
 .hero-image-hover:hover {
     transform: scale(1.03);
-    border-color: var(--bs-warning) !important;
+    /* 2. Usando tu variable personalizada */
+    border-color: var(--color-acento) !important;
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 .hero-image-hover:hover img {
@@ -116,7 +120,8 @@ body {
     position: relative;
     padding-left: 30px;
     margin-bottom: 0.7rem;
-    color: var(--bs-body-secondary);
+    /* 2. Usando tu variable personalizada */
+    color: var(--color-texto-secundario);
 }
 
 .list-checked li::before {
@@ -125,7 +130,8 @@ body {
     position: absolute;
     left: 0;
     top: 2px;
-    color: var(--bs-warning); /* Usa color de acento de Bootstrap */
+    /* 2. Usando tu variable personalizada */
+    color: var(--color-acento); 
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -135,7 +141,8 @@ body {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 .social-icons a:hover {
-    color: var(--bs-warning) !important;
+    /* 2. Usando tu variable personalizada */
+    color: var(--color-acento) !important;
     transform: translateY(-3px);
 }
 
